@@ -1,0 +1,20 @@
+// Instructions: Given a string, replace each of its characters by the next one in the alphabet
+// LOOKUP: ASCII, UTF-16, Related String Methods
+
+function replaceLetters(str) {
+  //make the string lowercase
+  let lowerCaseString = str.toLowerCase()
+  //set a variable for the new string
+  let newString = '';
+  //loop over the string 
+  for (let i = 0; i < lowerCaseString.length; i++) {
+    //create a conditional to determine if the character at charcode is greater than 96 and lower than 123. 
+    if (lowerCaseString[i] === "z"){
+      newString +="a"
+    }
+    else if (96 < lowerCaseString.charCodeAt(i) && lowerCaseString.charCodeAt(i) < 123) {
+      //add the the next character in the alphabet to the string. 
+        newString += String.fromCharCode(lowerCaseString.charCodeAt(i) + 1);
+    }
+ }
+ return newString;
